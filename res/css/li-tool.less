@@ -1,0 +1,248 @@
+@brandColor: mediumpurple;
+@accentColor: seagreen;
+@menutextColor: white;
+
+#imageBasics{
+   width: ~"calc(100% - 110px)";
+   margin-left: 110px;
+   margin-top: -20px;
+}
+
+#projName{
+  font-size: 120%;
+}
+
+#imgThumb{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    box-shadow: 0px 0px 5px;
+}
+
+.sidenav.collapsible{
+  background: fade(black,90%);
+  .label{
+    padding:0;
+    margin:0;
+    text-transform:uppercase;
+    text-align:left;
+  }
+  .halfinput{
+    padding:0;
+    margin:0;
+    input{
+      font-size:30px;
+    }
+    .prefix{
+      right: 30px;
+      width: 20px;
+    }
+  }
+}
+
+.sidenav  .active .collapsible-header,
+ .sidenav .collapsible-header:hover
+ {
+  background: white;
+ }
+
+.sidenav .collapsible-header{
+  background: darkgray;
+  box-shadow: 0px 0px 2px;
+}
+
+.sidenav .collapsible-body {
+    padding: 20px;
+    border-top: 1px solid lightgray;
+    margin: 0px;
+}
+
+.sidenav-trigger{
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    color: black;
+  }
+
+  .watermark{
+    background-image:url(../images/icon.png);  
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    opacity: .6;
+    margin-top: 60px;
+    filter: grayscale(100%) invert(100%);
+  }
+
+body{
+  color: black;
+  background: slategray;
+}
+
+.onlySmallScreen, .onlyBigScreen{
+  display: none;
+}
+#imageWrapper{
+  height: 100vh;
+  overflow: scroll;
+    border: 5px transparent solid;
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+}
+
+#imageWrapper:before{
+  transform: rotate(-90deg);
+    transform-origin: 0px 0px;
+    top: 230px;
+    position: absolute;
+    background: #70808f;
+    font-weight: bold;
+    font-family: Courier;
+    padding: 0 10px;
+    z-index:99999;
+}
+
+#imageWrapper:after{
+    position: absolute;
+    left: 30px;
+    background: #70808f;
+    font-weight: bold;
+    font-family: Courier;
+    padding: 0 10px;
+}
+
+#imagePreview{
+    margin: auto;
+    display: block;
+    position: absolute;
+    transform-origin: 0 0;
+    transition: 0.01s;
+    max-width: 100%;
+}
+
+@media (max-width : 500px){
+  #imageWrapper{
+    width: 100vw
+  }
+  .onlySmallScreen{
+    display: block;
+  }
+  .canvas{
+    width: 100vw;
+    min-height: 100vw;
+    position: absolute;
+  }
+}
+@media (min-width : 500px){
+  #imageWrapper{
+    width: calc(100vw - 300px);
+  }
+  .onlyBigScreen{
+    display: block;
+  }
+  .canvas{
+    width: ~"calc(100vw - 300px)";
+    margin-left: 300px;
+    min-height: 100vw;
+    position: absolute;
+  }
+}
+
+.sidenav{
+     background-size:400px;
+     background-position: 50%;
+     background-color: @brandColor;
+     li > a{
+       color: @menutextColor;
+     }
+}
+
+.iconBox{
+   margin-bottom:40px;
+   .background{
+     height:140px;
+     background-size:cover;
+     background-image:linear-gradient(fade(@accentColor,50%), transparent);
+     padding: 10px;
+    }
+   .icon{
+     background-repeat:no-repeat;
+     height:90px;
+     background-size:contain;
+     background-image:url(../images/icon.png);
+     margin: 10px;
+   }
+ }
+
+
+@offset: 187;
+@duration: 1.4s;
+
+.spinner {
+  animation: rotator @duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: @offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash @duration ease-in-out infinite,
+    colors (@duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: @offset; }
+ 50% {
+   stroke-dashoffset: @offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: @offset;
+   transform:rotate(450deg);
+ }
+}
+
+.sidenav.collapsible .halfinput .select-wrapper input
+{
+  font-size:20px;
+}
+
+.specColor + .sp-container.sp-flat{
+  border:none;
+  background: transparent;
+  margin-left:20px;
+  .sp-cancel,
+  .sp-choose{
+    display: none;
+  }
+  .sp-palette-container{
+    border:none;
+  }
+}
+
+.ccpta{
+    height: 60px;
+    border: none;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+    color: gray;
+}
+
+input.name{
+  display:inline-block;
+  width: 70%;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+  <script src='res/js/asyncReq.js' type="text/javascript"></script>
+
+  <meta name="HandheldFriendly" content="True" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+  <script src="res/vendor/xml2json.js"></script>
+  <link rel="stylesheet" href="res/vendor/materialize/materialize.min.css" type="text/css" />
+  <link href="res/vendor/materialize/icon.css" rel="stylesheet" type="text/css" />
+  <script src="res/vendor/jquery.min.js" type="text/javascript"></script>
+  <script src="res/vendor/clipboard.min.js" type="text/javascript"></script>
+  <script src="res/vendor/materialize/materialize.min.js" type="text/javascript"></script>
+  <script src='res/js/li-tool.js' type="text/javascript"></script>
+  <link href="res/css/li-tool.less" rel="stylesheet/less" />
+  <script src="res/vendor/less.3.9.0.min.js" type="text/javascript"></script>
+  <script src="res/vendor/spectrum.min.js"></script>
+  <script src="res/vendor/fabric.min.js"></script>
+  <link rel="stylesheet" href="res/vendor/spectrum.min.css"/>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.4.0/fabric.min.js" integrity="sha256-42MK8ODIRAEkCECsfaZOXb2psvEjAD0vK3AL3eNe86w=" crossorigin="anonymous"></script>
+  -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.12.0/js/md5.min.js" integrity="sha256-1K9nK/DlS1HHfbB3SmJz2qRfsW5Tgg/yimRBOHLmwk0=" crossorigin="anonymous"></script>
+
+  <title>labelImage - tool</title>
+  <script>
+  </script>
+</head>
+
+<body onload='start()'>
+  <!-- editor -->
+
+  <div id='appContainer'>
+    <div id="imageWrapper" style="">
+        <img class="" id="imagePreview" src="">
+        <canvas class="" id="imageC" src=""> </canvas>
+    </div>
+  </div>
+  <!-- inspector -->
+
+  <div class='onlyBigScreen'>
+    <ul id="nav-mobile" style='transform:translateX(0%)' class="collapsible menuMarkup sidenav sidenav-fixed c1"></ul>
+  </div>
+
+  <div class='onlySmallScreen'>
+    <ul id="slide-out" class="collapsible sidenav menuMarkup">
+    </ul><a href="#" data-target="slide-out" class="sidenav-trigger btn-floating btn-large waves-light blue"><i class="large material-icons">graphic_eq</i></a>
+  </div>
+</body>
+</html>
